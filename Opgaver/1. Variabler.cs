@@ -35,7 +35,8 @@
             Console.WriteLine("Lav en variabel af typen double og tildel den en værdi komma (decimal) værdi af 5 og en 1/4");
             Console.WriteLine("Udskriv variablen til konsollen.");
             // Lav opgaven herunder!
-
+            double double_number = 5.25;
+            Console.WriteLine(double_number);
         }
 
         public static void Strings1()
@@ -44,6 +45,8 @@
             Console.WriteLine("Lav en variabel af typen string og tildel den en værdi - den skal indeholde teksten 'Hello, World' med et udråbstegn til sidst!");
             Console.WriteLine("Udskriv variablen til konsollen.");
             // Lav opgaven herunder!
+            string myString = "Hello, World!";
+            Console.WriteLine(myString);
         }
 
         public static void Bool1()
@@ -53,6 +56,9 @@
             Console.WriteLine("Udskriv variablen til konsollen.");
             // Lav opgaven herunder!
 
+            bool trueFalseBool = false;
+
+            Console.WriteLine(trueFalseBool.ToString());
         }
 
 
@@ -62,6 +68,9 @@
             Console.WriteLine("Lav to string variabeler og udskriv dem ved brug af string interpolation.");
             Console.WriteLine("De skal være 'Hello, ' og 'World!'");
             // Lav opgaven herunder!
+            string hello = "Hello,";
+            string world = "World";
+            Console.WriteLine(hello +  " " + world);
         }
 
         public static void StringInterpolation2()
@@ -70,9 +79,9 @@
             Console.WriteLine("Her er fire forskellige strenge. Din opgave er at kombinere dem til én sætning ved brug af string interpolation!");
             Console.WriteLine("Strengene er: ");
             string del1 = "Hej";
-            string del4 = "med";
+            string del2 = "med";
             string del3 = "dig";
-            string del2 = "!";
+            string del4 = "!";
             Console.WriteLine($"del1: {del1}");
             Console.WriteLine($"del2: {del2}");
             Console.WriteLine($"del3: {del3}");
@@ -80,7 +89,7 @@
             Console.WriteLine("Kombiner dem nu til én sætning:");
 
             // Løsning med string interpolation
-            
+            Console.WriteLine(del1 + " " + del2 + " " + del3 + del4);
         }
 
         public static void Float1()
@@ -89,6 +98,8 @@
             Console.WriteLine("Lav en variabel af typen float og tildel den en værdi af 3 + 0.14");
             Console.WriteLine("Udskriv variablen til konsollen.");
             // Lav opgaven herunder!
+            float floatPi = 3;
+            Console.WriteLine(floatPi + 0.14);
         }
 
         public static void Char1()
@@ -97,6 +108,9 @@
             Console.WriteLine("Lav en variabel af typen char og tildel den en værdi af det første bogstav i alfabetet (Det skal være stort!)");
             Console.WriteLine("Udskriv variablen til konsollen.");
             // Lav opgaven herunder!
+            char stortA;
+            stortA = 'A';
+            Console.WriteLine(stortA);
         }
 
         public static void Decimal1()
@@ -105,6 +119,8 @@
             Console.WriteLine("Lav en variabel af typen decimal og tildel den en værdi af 100 og en halv");
             Console.WriteLine("Udskriv variablen til konsollen.");
             // Lav opgaven herunder!
+            decimal hundredehalv = 100.5m;
+            
         }
     }
 }
