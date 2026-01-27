@@ -128,6 +128,7 @@ namespace Opgaver
                     sum++;
                 }
             }
+
             Console.WriteLine();
         }
 
@@ -136,6 +137,14 @@ namespace Opgaver
             Console.WriteLine("Opgave 8:");
             Console.WriteLine("Brug et loop til at udskrive alle ulige tal mellem 1 og 50.");
             // Lav opgaven herunder!
+
+            for (int i = 0; i < 51; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    Console.WriteLine(i);
+                }
+            }
         }
 
         public static void Loop9()
@@ -144,6 +153,16 @@ namespace Opgaver
             Console.WriteLine(
                 "Bed brugeren om at indtaste 5 tal (ét ad gangen). Brug et loop til at lægge dem sammen og udskriv summen til sidst.");
             // Lav opgaven herunder!
+
+            int? sum = 0;
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Indtast et tal");
+                sum = sum + Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("Den samlede værdi er: " + sum);
         }
 
         public static void Loop10()
@@ -152,6 +171,21 @@ namespace Opgaver
             Console.WriteLine(
                 "Lav et program, hvor brugeren skal gætte et hemmeligt tal mellem 1 og 10. Brug et loop, så brugeren kan gætte indtil det rigtige tal er fundet.");
             // Lav opgaven herunder!
+
+
+            Random rnd = new Random();
+            int secretNumber = rnd.Next(1, 10);
+            Boolean numberGuessed = false;
+
+            while (!numberGuessed)
+            {
+                Console.WriteLine("Indtast et tal mellem 1 og 10");
+                if (Convert.ToInt32(Console.ReadLine()) == secretNumber)
+                {
+                    Console.WriteLine($"Du gættede rigtigt, det rigtige svar var {secretNumber}");
+                    numberGuessed = true;
+                }
+            }
         }
 
         public static void BankeBøf()
@@ -160,6 +194,50 @@ namespace Opgaver
             Udskriv 'Banke' hvis tallet er deleligt med 3, 'Bøf' hvis tallet er deleligt med 5 
             og 'BankeBøf' hvis tallet er deleligt med både 3 og 5.");
             // Lav opgaven herunder!
+
+            for (int i = 1; i < 31; i++)
+            {
+                if (i % 5 == 0 && i % 3 != 0)
+                {
+                    Console.WriteLine("Bøf");
+                }
+                else if (i % 3 == 0 && i % 5 != 0)
+                {
+                    Console.WriteLine("Banke");
+                }
+                else if (i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("BankeBøf");
+                }
+                else
+                {
+                    Console.WriteLine(i);
+                }
+            }
+
+            //AI generated loop(for at se hvordan det kunne gøres bedres.
+
+            /*
+                for (int i = 1; i <= 30; i++)
+                    {
+                        if (i % 3 == 0 && i % 5 == 0)
+                        {
+                            Console.WriteLine("BankeBøf");
+                        }
+                        else if (i % 3 == 0)
+                        {
+                            Console.WriteLine("Banke");
+                        }
+                        else if (i % 5 == 0)
+                        {
+                            Console.WriteLine("Bøf");
+                        }
+                        else
+                        {
+                            Console.WriteLine(i);
+                        }
+                    }
+            */
         }
 
         public static void MiniProjektLommeregner()
@@ -171,6 +249,22 @@ namespace Opgaver
             Console.WriteLine("Programmet skal udregne og udskrive resultatet.");
             Console.WriteLine("Tip: Brug if/else eller switch til at vælge regnearten.");
             // Lav opgaven herunder!
+
+
+            int? sum = 0;
+            int? numberOne = Convert.ToInt32(Console.ReadLine());
+            int? numberTwo = Convert.ToInt32(Console.ReadLine());
+
+            sum = Console.ReadKey().KeyChar switch
+            {
+                '+' => numberOne + numberTwo,
+                '-' => numberOne - numberTwo,
+                '*' => numberOne * numberTwo,
+                '/' => numberOne / numberTwo,
+                _ => sum
+            };
+
+            Console.WriteLine($"Summen af dine to tal er {sum}");
         }
     }
 }

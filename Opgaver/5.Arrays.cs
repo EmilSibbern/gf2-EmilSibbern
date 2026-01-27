@@ -34,7 +34,17 @@ namespace Opgaver
                 "Lav et program som gemmer 5 fornavne som brugeren indtaster i et array."
             );
             // Lav opgaven herunder!
-            string[] navne = new string[5];
+            string?[] navne = new string?[5];
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Indtast et navn som skal tilføjes til array på plads " + i);
+                navne[i] = Console.ReadLine();
+            }
+
+            for (int i = 0; i < navne.Length; i++)
+            {
+                Console.WriteLine(navne[i]);
+            }
         }
 
         public static void Array2()
@@ -44,6 +54,25 @@ namespace Opgaver
                 "Lav et program som gemmer 5 tal i et array og udskriver det største tal."
             );
             // Lav opgaven herunder!
+            
+            int?[] numbers = new int?[5];
+            int? biggestNumber = numbers[0];
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Indtast et tal der skal tilføjes til array på plads " + i);
+                numbers[i] = int.Parse(Console.ReadLine());
+            }
+
+            foreach (var t in numbers)
+            {
+                if (t > biggestNumber)
+                {
+                    biggestNumber = t;
+                }
+            }
+
+            //int? biggestNumber = numbers.Max(); - Anden måde at gøre det på
+
         }
 
         public static void Array3()
