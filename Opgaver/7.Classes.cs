@@ -9,31 +9,31 @@ namespace Opgaver
         {
             Console.WriteLine("------------------------------------------");
             Console.WriteLine("Velkommen til opgaver omkring Klasser og Objekter!");
-            
+
             // Grundlæggende klasser
             Class1();
             Class2();
             Class3();
-            
+
             // Properties opgaver
             Property1();
             Property2();
             Property3();
-            
+
             // Constructor opgaver
             Constructor1();
             Constructor2();
             Constructor3();
-            
+
             // Method opgaver i klasser
             Method1();
             Method2();
             Method3();
-            
+
             // Inheritance opgaver
             Inheritance1();
             Inheritance2();
-            
+
             // Mini-projekter
             MiniProjektPerson();
             MiniProjektBil();
@@ -45,6 +45,13 @@ namespace Opgaver
             Console.WriteLine("Lav en klasse kaldet 'Person' med properties for navn og alder.");
             Console.WriteLine("Opret et objekt af klassen og udskriv informationen.");
             // Lav opgaven herunder!
+
+            Person person = new Person();
+            person.Name = "John";
+            person.Age = 18;
+
+            Console.WriteLine($"Navn:  {person.Name}");
+            Console.WriteLine($"Alder:  {person.Age}");
         }
 
         public static void Class2()
@@ -53,6 +60,19 @@ namespace Opgaver
             Console.WriteLine("Lav en klasse kaldet 'Bil' med properties for mærke, model og årgang.");
             Console.WriteLine("Opret to forskellige bil-objekter og udskriv deres information.");
             // Lav opgaven herunder!
+            
+            Car cars1 = new Car();
+            cars1.Brand = "BMW";
+            cars1.Model = "120D";
+            cars1.Year = 2008;
+            
+            Car cars2 = new Car();
+            cars2.Brand = "Peugeot";
+            cars2.Model = "106";
+            cars2.Year = 1996;
+
+            Console.WriteLine($"Bil 1 Mærke: {cars1.Brand}, Model: {cars1.Model}, Årgang: {cars1.Year}");
+            Console.WriteLine($"Bil 2 Mærke: {cars2.Brand}, Model: {cars2.Model}, Årgang: {cars2.Year}");
         }
 
         public static void Class3()
@@ -61,6 +81,18 @@ namespace Opgaver
             Console.WriteLine("Lav en klasse kaldet 'Cirkel' med properties for radius.");
             Console.WriteLine("Opret et cirkel-objekt og udskriv radiusen.");
             // Lav opgaven herunder!
+
+            Circle circle1 = new Circle()
+            {
+                Radius = 360
+            };
+
+            Console.WriteLine($"Radius: {circle1.Radius}");
+        }
+        
+        class Circle
+        {
+            public int Radius  { get; set; }
         }
 
         public static void Property1()
@@ -120,7 +152,8 @@ namespace Opgaver
         public static void Method1()
         {
             Console.WriteLine("Opgave 10 (Methods i klasser):");
-            Console.WriteLine("Lav en klasse kaldet 'Lommeregner' med en method der tager to tal og returnerer summen.");
+            Console.WriteLine(
+                "Lav en klasse kaldet 'Lommeregner' med en method der tager to tal og returnerer summen.");
             Console.WriteLine("Opret et lommeregner-objekt og test methoden.");
             // Lav opgaven herunder!
         }
@@ -128,7 +161,8 @@ namespace Opgaver
         public static void Method2()
         {
             Console.WriteLine("Opgave 11 (Methods i klasser):");
-            Console.WriteLine("Lav en klasse kaldet 'Cirkel' med properties for radius og methods for at beregne areal og omkreds.");
+            Console.WriteLine(
+                "Lav en klasse kaldet 'Cirkel' med properties for radius og methods for at beregne areal og omkreds.");
             Console.WriteLine("Opret et cirkel-objekt og udskriv både areal og omkreds.");
             // Lav opgaven herunder!
         }
@@ -137,7 +171,8 @@ namespace Opgaver
         {
             Console.WriteLine("Opgave 12 (Methods i klasser):");
             Console.WriteLine("Lav en klasse kaldet 'Person' med properties for navn og alder.");
-            Console.WriteLine("Tilføj en method 'IntroduceYourself()' der udskriver 'Hej, jeg hedder [navn] og er [alder] år gammel'.");
+            Console.WriteLine(
+                "Tilføj en method 'IntroduceYourself()' der udskriver 'Hej, jeg hedder [navn] og er [alder] år gammel'.");
             Console.WriteLine("Opret et person-objekt og kald methoden.");
             // Lav opgaven herunder!
         }
@@ -146,7 +181,8 @@ namespace Opgaver
         {
             Console.WriteLine("Opgave 13 (Inheritance):");
             Console.WriteLine("Lav en base klasse kaldet 'Dyr' med properties for navn og alder.");
-            Console.WriteLine("Lav en derived klasse kaldet 'Hund' der arver fra Dyr og har en ekstra property for race.");
+            Console.WriteLine(
+                "Lav en derived klasse kaldet 'Hund' der arver fra Dyr og har en ekstra property for race.");
             Console.WriteLine("Opret både et Dyr-objekt og et Hund-objekt.");
             // Lav opgaven herunder!
         }
@@ -155,7 +191,8 @@ namespace Opgaver
         {
             Console.WriteLine("Opgave 14 (Inheritance):");
             Console.WriteLine("Lav en base klasse kaldet 'Køretøj' med properties for mærke og årgang.");
-            Console.WriteLine("Lav en derived klasse kaldet 'Bil' der arver fra Køretøj og har en ekstra property for antal døre.");
+            Console.WriteLine(
+                "Lav en derived klasse kaldet 'Bil' der arver fra Køretøj og har en ekstra property for antal døre.");
             Console.WriteLine("Lav en method i Bil-klassen der udskriver alle informationer.");
             // Lav opgaven herunder!
         }
@@ -186,5 +223,18 @@ namespace Opgaver
             Console.WriteLine("Opret forskellige køretøjer og test alle funktioner.");
             // Lav opgaven herunder!
         }
+    }
+
+    class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+
+    class Car
+    {
+        public string Brand { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
     }
 }

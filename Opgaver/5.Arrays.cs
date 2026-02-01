@@ -54,7 +54,7 @@ namespace Opgaver
                 "Lav et program som gemmer 5 tal i et array og udskriver det største tal."
             );
             // Lav opgaven herunder!
-            
+
             int?[] numbers = new int?[5];
             int? biggestNumber = numbers[0];
             for (int i = 0; i < 5; i++)
@@ -72,7 +72,6 @@ namespace Opgaver
             }
 
             //int? biggestNumber = numbers.Max(); - Anden måde at gøre det på
-
         }
 
         public static void Array3()
@@ -83,6 +82,19 @@ namespace Opgaver
                 og udskriver dem alle i omvendt rækkefølge."
             );
             // Lav opgaven herunder!
+
+            String?[] cityNames = new String?[5];
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Skriv et by navn");
+                cityNames[i] = Console.ReadLine();
+            }
+
+            foreach (var citynames in cityNames.Reverse())
+            {
+                Console.WriteLine($"Næste by i array er: {citynames}");
+            }
         }
 
         public static void List1()
@@ -94,6 +106,17 @@ namespace Opgaver
             );
             // Lav opgaven herunder!
             List<string> navne = new List<string>();
+
+
+            for (int i = 0; i < 5; i++)
+            {
+                navne.Add(Console.ReadLine());
+            }
+
+            foreach (var names in navne)
+            {
+                Console.WriteLine($"Næste navn i listen er {names}");
+            }
         }
 
         public static void List2()
@@ -104,6 +127,28 @@ namespace Opgaver
                 navne indtil de skriver 'stop'. Udskriv alle navnene til sidst."
             );
             // Lav opgaven herunder!
+
+            List<string?> inputNames = new List<string?>();
+            Boolean stopEnabled = false;
+            string currentInput;
+            while (!stopEnabled)
+            {
+                Console.WriteLine("indtast nyt navn eller stop med 'stop'");
+                currentInput = Console.ReadLine();
+                if (currentInput == "stop")
+                {
+                    stopEnabled = true;
+                }
+                else
+                {
+                    inputNames.Add(currentInput);
+                }
+            }
+
+            foreach (var name in inputNames)
+            {
+                Console.WriteLine($"Næste navn i listen er: {name}");
+            }
         }
 
         public static void List3()
@@ -114,6 +159,23 @@ namespace Opgaver
                 og programmet udskriver gennemsnittet."
             );
             // Lav opgaven herunder!
+
+            int inputValue;
+            bool stopEnabled = false;
+            List<int> numberList = new List<int>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Indtast et tal");
+                numberList.Add(int.Parse(Console.ReadLine()));
+            }
+
+            foreach (var number in numberList)
+            {
+                Console.WriteLine($"Dine tal var: {number}");
+            }
+
+            Console.WriteLine("Gennemsnittet var: " + numberList.Average());
         }
 
         public static void List4()
@@ -124,6 +186,43 @@ namespace Opgaver
                 og kan fjerne ting fra listen igen. Udskriv listen til sidst."
             );
             // Lav opgaven herunder!
+
+
+            string? input;
+            bool shoppingStopEnabled = false;
+            bool scratchStopEnabled = false;
+            List<string> shoppingList = new List<string>();
+
+            while (!shoppingStopEnabled)
+            {
+                Console.WriteLine("Indtast ny ting til shopping list");
+                input = Console.ReadLine();
+                if (input == "stop")
+                {
+                    shoppingStopEnabled = true;
+                }
+                else
+                {
+                    if (input != null) shoppingList.Add(input);
+                }
+            }
+
+            while (!scratchStopEnabled)
+            {
+                Console.WriteLine(
+                    "Hvis du vil fjerne en ting fra listen skriv det her, en ting per linje stop med 'stop'");
+                Console.WriteLine(string.Join(", ", shoppingList));
+                input = Console.ReadLine();
+
+                if (input == "stop")
+                {
+                    scratchStopEnabled = true;
+                }
+                else
+                {
+                    if (input != null) shoppingList.Remove(input);
+                }
+            }
         }
 
         public static void List5()
@@ -134,6 +233,34 @@ namespace Opgaver
                 i en liste og programmet udskriver hvor mange navne der starter med 'A'."
             );
             // Lav opgaven herunder!
+            bool stopEnabled = false;
+            string currentInput;
+            int count = 0;
+            List<string> names = new List<string>();
+            while (!stopEnabled)
+            {
+                Console.WriteLine("indtast nyt navn eller stop med 'stop'");
+                currentInput = Console.ReadLine();
+                if (currentInput == "stop")
+                {
+                    stopEnabled = true;
+                }
+
+                if (currentInput != null)
+                {
+                    names.Add(currentInput.ToLower());
+                }
+            }
+
+            foreach (var name in names)
+            {
+                if (name.StartsWith("A".ToLower()))
+                {
+                    count++;
+                }
+            }
+
+            Console.WriteLine($"Ud af alle navnene i listen starter {count} med A");
         }
 
         public static void Dict1()
@@ -144,7 +271,23 @@ namespace Opgaver
                 i en dictionary og udskriver dem alle."
             );
             // Lav opgaven herunder!
-            // Husk syntaxen for Dictionary<type, type> navn = new Dictionary<type, type>();
+            // Husk syntaxen for Dictionary<type, type> navn = new Dictionary<type, type>()
+
+            Dictionary<string?, int> dict = new Dictionary<string?, int>();
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("indtast navn");
+                var namer = Console.ReadLine();
+                Console.WriteLine("indtast alder");
+                var age = int.Parse(Console.ReadLine());
+                dict.Add(namer, age);
+            }
+
+            foreach (var item in dict)
+            {
+                Console.WriteLine($"Navn {item.Key} Alder {item.Value}");
+            }
         }
 
         public static void Dict2()
@@ -155,6 +298,21 @@ namespace Opgaver
                 og få alderen på personen ud fra dictionaryen fra før."
             );
             // Lav opgaven herunder!
+
+            Dictionary<string?, int> dict = new Dictionary<string?, int>();
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("indtast navn");
+                var namer = Console.ReadLine();
+                Console.WriteLine("indtast alder");
+                var age = int.Parse(Console.ReadLine());
+                dict.Add(namer, age);
+            }
+
+            Console.WriteLine("Indtast et navn du vil søge på");
+            string input = Console.ReadLine();
+            Console.WriteLine(dict[input]);
         }
 
         public static void MiniProjektKlasseliste()
@@ -184,6 +342,27 @@ namespace Opgaver
                 og udskriv en indkøbsliste med total pris til brugeren."
             );
             // Lav opgaven herunder!
+
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            int sum = 0;
+
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("indtast navn");
+                string name = Console.ReadLine();
+                Console.WriteLine("indtast alder");
+                int age = int.Parse(Console.ReadLine());
+                dict.Add(name, age);
+            }
+
+            foreach (var item in dict)
+            {
+                Console.WriteLine(item.Key);
+                sum += item.Value;
+            }
+
+            Console.WriteLine($"Total pris {sum}");
         }
     }
 }
