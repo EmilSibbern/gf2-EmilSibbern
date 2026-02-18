@@ -11,8 +11,18 @@ namespace Opgaver
         // Konverterer en binær streng (fx "10101010") til et heltal (fx 170)
         public static int BinaryToDecimal(string binary)
         {
+            int result = 0;
+            foreach (char c in binary)
+            {
+                result *= 2;
+                if (c == '1')
+                {
+                    result += 1;
+                }
+            }
+
             // TODO: Implementér konvertering fra binær til decimal uden indbyggede konverteringsfunktioner
-            return 0;
+            return result;
         }
 
         // Konverterer et heltal (fx 170) til en binær streng (fx "10101010")
